@@ -1,0 +1,14 @@
+@model List<Dish>
+
+<h1 class="text-center">Welcome to CRUDelicious!</h1>
+
+<ul class="flex-1">
+  @foreach (var dish in Model)
+  {
+    <li>
+      <a asp-controller="Dishes" asp-action="Details" asp-route-postID="@dish.PostId">
+        @dish.Name
+      </a> by: @dish.Chef
+    </li>
+  }
+</ul>

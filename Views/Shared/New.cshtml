@@ -1,0 +1,39 @@
+@model Dish
+
+<h1>Add a New Dish</h1>
+
+<form asp-controller="Dishes" asp-action="Create" method="POST">
+  <div class="mb-3 d-flex flex-column">
+    <label asp-for="Name"></label>
+    <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+    <input asp-for="Name">
+  </div>
+  <div class="mb-3 d-flex flex-column">
+    <label asp-for="Chef"></label>
+    <span asp-validation-for="Chef" class="text-danger font-weight-bold"></span>
+    <input asp-for="Chef">
+  </div>
+  <div class="mb-3 d-flex flex-column">
+    <label asp-for="Tastiness"></label>
+    <span asp-validation-for="Tastiness" class="text-danger font-weight-bold"></span>
+    <select asp-for="Tastiness">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+
+    </select>
+  </div>
+  <div class="mb-3 d-flex flex-column">
+    <label asp-for="Calories"></label>
+    <span asp-validation-for="Calories" class="text-danger font-weight-bold"></span>
+    <input asp-for="Calories" min="0">
+  </div>
+  <div class="mb-3 d-flex flex-column">
+    <label asp-for="Description"></label>
+    <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
+    <textarea asp-for="Description" rows="4" cols="70"></textarea>
+  </div>
+  <button>Create a New Post!</button>
+</form>
